@@ -1,0 +1,7 @@
+<html>
+<head>
+<title>Student's Information View</title>
+</head>
+<body>
+</body>
+</html>
