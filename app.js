@@ -9,7 +9,7 @@ const dotenv=require('dotenv');
 const host='0.0.0.0';
 mongoose.connect('mongodb+srv://akshaygupta42:Coldblot%4070@cluster0.se5soo7.mongodb.net/', { dbName: 'StudentInformationSystem' }).then('Connected database').catch(e => console.log(e));
 
-
+//schema for database model
 const schema = mongoose.Schema(
     {
         ID: Number,
