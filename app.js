@@ -32,7 +32,16 @@ app.get('/getUsers', async (req, res) => {
         users: user,
     });
 });
-
+app.post('/Id', async (req, res) => {
+    const { Image } = req.body;
+    const id = await (await model.find({}, { _id: 1, ID: 1 }));
+    for (var i = 0; i < id.length; i++) {
+        if (Image == id[i].ID) {
+            await model.findOneAndDelete({ ID: id[0].ID });
+        }
+    }
+    
+});
 app.get('/modifyView',async (req,res)=>{    
 const id = await(await model.find({}, { _id: 0, ID: 1 }));
 const name = await(await model.find({}, { _id: 0, Name: 1 }));
