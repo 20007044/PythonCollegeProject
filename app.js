@@ -22,6 +22,10 @@ const schema = mongoose.Schema(
 );
 const model = mongoose.model('InformationSystem', schema);
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static('html'));
+app.get('/', (req, res) => res.sendFile(__dirname+'/html/index.html'));
+
 app.get('/modifyView',async (req,res)=>{    
 const id = await(await model.find({}, { _id: 0, ID: 1 }));
 const name = await(await model.find({}, { _id: 0, Name: 1 }));
