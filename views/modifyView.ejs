@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <title>Student's Information View'</title>
-   <style>
+    <style>
         * {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         .top-bar {
             display: flex;
             width: 100%;
@@ -18,10 +19,11 @@
             color: #ff8823;
             align-items: center;
         }
-  .top-bar h1 {
+
+        .top-bar h1 {
             font-size: 4vw;
         }
- .view-table
+        .view-table
         {
             display:flex;
 
@@ -29,21 +31,21 @@
             justify-content:center;
             align-items:center;
         }
-   .view-table .row {
+        .view-table .row {
             display: flex;
             margin-top:5px;
             width: 100%;
             background-color: #d2fffe;
             justify-content: center;
         }
-   .view-table .column
+        .view-table .column
         {
             display:flex;
             width:100%;
             justify-content:space-between;
             border:0.5px solid #000000;
         }
-      #datamanipulationtitle
+        #datamanipulationtitle
         {
             display: flex;
             align-items: center;
@@ -52,7 +54,7 @@
             margin-bottom:20px;
             text-decoration: underline;
         }
-  #icon
+        #icon
         {
             display:flex;
             align-content: center;
@@ -63,13 +65,13 @@
         {
             border: none;
         }
-</style>
+    </style>
 </head>
 <body>
- <div class="top-bar">
+    <div class="top-bar">
         <h1>Student Information View</h1>
     </div>
-   <div id="datamanipulationtitle">
+    <div id="datamanipulationtitle">
     <h2>Modify Data</h2>
    </div>
     <div class="view-table">
@@ -78,11 +80,11 @@
                 <h2>ID</h2>
                 <hr />
             </div>
-         <div class="column">
+            <div class="column">
                 <h2>Name</h2>
                 <hr />
             </div>
-         <div class="column">
+            <div class="column">
                 <h2>Roll</h2>
                 <hr />
             </div>
@@ -90,7 +92,7 @@
                 <h2>Father</h2>
                 <hr />
             </div>
-               <div class="column">
+            <div class="column">
                 <h2>Address</h2>
                 <hr />
             </div>
@@ -98,12 +100,12 @@
                 <h2>Phone</h2>
                 <hr />
             </div>
-            <div class="column">
+             <div class="column">
                 <h2>Delete</h2>
                 <hr />
             </div>
-      </div>
-      <%for(var i=0;i<rows;i++) {%>
+            </div>
+            <%for(var i=0;i<rows;i++) {%>
             <div class="row">
              <div class="column">
                 <h2><%=data[0][i]%></h2>
@@ -124,9 +126,13 @@
                 <h2><%=data[5][i]%></h2>
             </div>
              <div class="column">
-  <form method="post" action="Id">
+             <form method="post" action="Id">
               <div id="icon"> <button type="submit" name="Image" value=<%=data[0][i]%>><img src=<%=pic%> width="30" height="30" onclick=removeRow(<%=data[0][i]%>)></button></div>
                </form>
             </div>
+            </div>
+            <%}%>
+    </div>
+
 </body>
 </html>
