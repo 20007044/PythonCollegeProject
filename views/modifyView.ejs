@@ -103,5 +103,30 @@
                 <hr />
             </div>
       </div>
+      <%for(var i=0;i<rows;i++) {%>
+            <div class="row">
+             <div class="column">
+                <h2><%=data[0][i]%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[1][i]%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[2][i]%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[3][i]%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[4][i]%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[5][i]%></h2>
+            </div>
+             <div class="column">
+  <form method="post" action="Id">
+              <div id="icon"> <button type="submit" name="Image" value=<%=data[0][i]%>><img src=<%=pic%> width="30" height="30" onclick=removeRow(<%=data[0][i]%>)></button></div>
+               </form>
+            </div>
 </body>
 </html>
