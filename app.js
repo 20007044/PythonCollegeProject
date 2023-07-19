@@ -20,7 +20,27 @@ const schema = mongoose.Schema(
         Phone: String,
     }
 );
-
+app.get('/modifyView',async (req,res)=>{    
+const id = await(await model.find({}, { _id: 0, ID: 1 }));
+const name = await(await model.find({}, { _id: 0, Name: 1 }));
+const roll = await(await model.find({}, { _id: 0, Roll: 1 }));
+const father = await(await model.find({}, { _id: 0, Father: 1 }));
+const address = await(await model.find({}, { _id: 0, Address: 1 }));
+const phone = await(await model.find({}, { _id: 0, Phone: 1 }));
+let ids = fetchColumn(id, 'ID');
+let names = fetchColumn(name, 'Name');
+let rolls = fetchColumn(roll, 'Roll');
+let fathers = fetchColumn(father, 'Father');
+let addresss = fetchColumn(address, 'Address');
+let phones = fetchColumn(phone, 'Phone');
+const data = new Array(ids, names, rolls, fathers, addresss, phones);
+const query = model.find({});
+query.count().then(cnt => {
+    res.render('modifyView.ejs', {
+        rows: cnt,
+        data: data,
+        pic: "./Images/edit.png",})})
+    });
 app.get('/InformationView', async (req, res) => {
     const id = await (await model.find({}, { _id: 0, ID: 1 }));
     const name = await (await model.find({}, { _id: 0, Name: 1 }));
