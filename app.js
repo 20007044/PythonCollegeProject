@@ -20,6 +20,8 @@ const schema = mongoose.Schema(
         Phone: String,
     }
 );
+const model = mongoose.model('InformationSystem', schema);
+
 app.get('/modifyView',async (req,res)=>{    
 const id = await(await model.find({}, { _id: 0, ID: 1 }));
 const name = await(await model.find({}, { _id: 0, Name: 1 }));
