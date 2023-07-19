@@ -20,3 +20,4 @@ const schema = mongoose.Schema(
         Phone: String,
     }
 );
+app.listen(process.env.PORT || 80, () => console.log('Connection Established'));
