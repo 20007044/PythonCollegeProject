@@ -26,6 +26,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('html'));
 app.get('/', (req, res) => res.sendFile(__dirname+'/html/index.html'));
 
+function fetchColumn(id,column) {
+    arr = [];
+    for (var i = 0; i < id.length; i++) {
+        const a = id[i][column];
+        arr.push(a);
+    }
+    return arr;
+}
 app.get('/getUsers', async (req, res) => {
     const user = await model.find({});
     res.json({
@@ -42,6 +50,7 @@ app.post('/Id', async (req, res) => {
     }
     
 });
+
 app.get('/modifyView',async (req,res)=>{    
 const id = await(await model.find({}, { _id: 0, ID: 1 }));
 const name = await(await model.find({}, { _id: 0, Name: 1 }));
