@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8"/>
-<title>Student's Information View</title>
-<style>
+    <meta charset="utf-8" />
+    <title>Student's Information View'</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -18,17 +19,19 @@
             color: #ff8823;
             align-items: center;
         }
-	.top-bar h1 {
+
+        .top-bar h1 {
             font-size: 4vw;
-	}
-	.view-table
+        }
+        .view-table
         {
             display:flex;
+
             flex-direction:column;
             justify-content:center;
             align-items:center;
         }
-	.view-table .row {
+        .view-table .row {
             display: flex;
             margin-top:5px;
             width: 100%;
@@ -41,11 +44,12 @@
             width:100%;
             justify-content:space-between;
             border:0.5px solid #000000;
-</style>
+        }
+    </style>
 </head>
 <body>
     <div class="top-bar">
-        <h1>Student's Information View</h1>
+        <h1>Student Information View</h1>
     </div>
     <div class="view-table">
         <div class="row">
@@ -74,7 +78,7 @@
                 <hr />
             </div>
             </div>
-                <%for(var i=0;i<rows;i++) {%>
+            <%for(var i=0;i<rows;i++) {%>
             <div class="row">
              <div class="column">
                 <h2><%=data[0][i]%></h2>
@@ -97,5 +101,10 @@
 
             </div>
             <%}%>
+    </div>
+ <script>
+let table = document.querySelector('.view-table');
+ 
+</script>
 </body>
 </html>
