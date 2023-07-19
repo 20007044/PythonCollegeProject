@@ -1,13 +1,14 @@
 <html>
 <head>
-    <!-- Give the styling for the homepage -->
-<style>
-    * {
+    <!-- Give me the styling for the homepage -->
+    <link href="style.css" rel="stylesheet"/>
+    <style>
+        * {
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-      .top-bar
+        }
+        .top-bar
         {
             display:flex;
             width:100%;
@@ -17,7 +18,10 @@
             align-items:center;
           
         }
-       .form-container {
+        .top-bar h1 {
+            font-size: 4vw;
+        }
+        .form-container {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -26,7 +30,7 @@
             background-color: #d2fffe;
            
         }
-	form
+        form
         {
             margin-top:10px;
             width:50%;
@@ -38,11 +42,17 @@
             flex-direction:row;
             width:100%;
         }
-	.column
+        .column
         {
             width:50%;
         }
-	button {
+        .row input {
+            margin-left: 50px;
+            border-radius: 5px;
+            width:100%;
+            height:100%;
+        }
+        button {
             width: 20%;
             height: 8vh;
             background: #000000;
@@ -51,35 +61,31 @@
             color: #ff8823;
             font-weight:800;
         }
-	.row input {
-            margin-left: 50px;
-            border-radius: 5px;
-            width:100%;
-            height:100%;
-        }
-</style>
+
+    </style>
 </head>
 <body>
-    <!-- Top navigation bar defined where title shows up -->
- <div class="top-bar">
+    <div class="top-bar">
         <h1>Student Form</h1>
     </div>
-<div class="form-container">
+    <div class="form-container">
         <form method="post" action="/submitDetails">
-	<div class="row">
+            <div class="row">
                 <div class="column"><h2>ID:</h2></div>
                 <div class="column"><input type="text" name="ID" placeholder="ID..." /></div>
             </div>
-        <div class="row">
+
+            <div class="row">
                 <div class="column"><h2>Name:</h2></div>
                 <div class="column"><input type="text" name="Name" placeholder="Name..." /></div>
             </div>
 
-        <div class="row">
+            <div class="row">
                 <div class="column"><h2>Roll:</h2></div>
                 <div class="column"><input type="text" name="Roll" placeholder="Roll..." /></div>
             </div>
-          <div class="row">
+
+            <div class="row">
                 <div class="column"><h2>Father:</h2></div>
                 <div class="column"><input type="text" name="Father" placeholder="Father..." /></div>
             </div>
@@ -92,14 +98,13 @@
                 <div class="column"><h2>Phone:</h2></div>
                 <div class="column"><input type="text" name="Phone" placeholder="Phone..." /></div>
             </div>
-            <!-- All the buttons shows up on the bottom -->
             <div class="row">
                 <button type="submit">Submit</button>
                 <button type="button" onclick="window.location.href='/InformationView'">View</a></button>
-                <button type="button">Modify</button>
+                <button type="button" onclick="window.location.href='/modifyView'">Modify</button>
                 <button type="button" onclick="window.location.href='/DeleteView'">Delete</button>
             </div>
         </form>
-</div>
+    </div>
 </body>
 </html>

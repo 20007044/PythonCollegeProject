@@ -29,7 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
-    <Content Include="html\form-submission.html" />
+    <Content Include="views\form-submission.ejs" />
     <Content Include="html\index.html" />
     <Content Include="views\DeleteView.ejs" />
     <Content Include="views\InformationView.ejs">
