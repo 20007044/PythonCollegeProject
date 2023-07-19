@@ -26,6 +26,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('html'));
 app.get('/', (req, res) => res.sendFile(__dirname+'/html/index.html'));
 
+app.get('/getUsers', async (req, res) => {
+    const user = await model.find({});
+    res.json({
+        users: user,
+    });
+});
+
 app.get('/modifyView',async (req,res)=>{    
 const id = await(await model.find({}, { _id: 0, ID: 1 }));
 const name = await(await model.find({}, { _id: 0, Name: 1 }));
