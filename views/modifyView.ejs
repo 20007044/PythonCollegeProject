@@ -101,7 +101,7 @@
                 <hr />
             </div>
              <div class="column">
-                <h2>Delete</h2>
+                <h2>Update</h2>
                 <hr />
             </div>
             </div>
@@ -126,8 +126,10 @@
                 <h2><%=data[5][i]%></h2>
             </div>
              <div class="column">
-             <form method="post" action="Id">
-              <div id="icon"> <button type="submit" name="Image" value=<%=data[0][i]%>><img src=<%=pic%> width="30" height="30" onclick=removeRow(<%=data[0][i]%>)></button></div>
+             <form method="post" action="ModifyOper">
+              <div id="icon">
+             <button type="submit" name="Image">
+             <img src=<%=pic%> width="30" height="30"></button></div>
                </form>
             </div>
             </div>

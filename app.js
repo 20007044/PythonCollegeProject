@@ -34,12 +34,43 @@ app.post('/submitDetails', async  (req, res) => {
     }).catch(e => res.render('form-submission.ejs', { Message: e }));
     res.render('form-submission.ejs', { Message:'Form has been submitted'});
 });
+app.get('/Search',(req,res)=>{
+    res.render('search.ejs');
+})
 app.get('/getUsers', async (req, res) => {
     const user = await model.find({});
     res.json({
         users: user,
     });
 });
+app.get('/search/:id',(req,res)=>{
+    const name=req.params.id;
+    model.find({Name:name}).then(data=>{
+        
+        if(!data)
+        {
+            res.status(404).send('data cant be fetch');
+        }
+        else
+        {
+            res.render('searchView.ejs',{data:data});
+            // let ids = fetchColumn(id, 'ID');
+            // let names = fetchColumn(name,'Name');
+            // let rolls = fetchColumn(roll, 'Roll');
+            // let fathers = fetchColumn(father, 'Father');
+            // let addresss = fetchColumn(address, 'Address');
+            // let phones = fetchColumn(phone, 'Phone');
+            // const data = new Array(ids,names, rolls, fathers,addresss,phones);
+            // const query = model.find({});
+            // query.count().then(cnt => {
+            //     res.render('InformationView.ejs', {
+            //         rows: cnt,
+            //         data:data,
+        
+            // }) })
+        }
+    });
+})
 app.get('/modifyView',async (req,res)=>{    
 const id = await(await model.find({}, { _id: 0, ID: 1 }));
 const name = await(await model.find({}, { _id: 0, Name: 1 }));
@@ -61,6 +92,7 @@ query.count().then(cnt => {
         data: data,
         pic: "./Images/edit.png",})})
     });
+
 
 app.get('/DeleteView', async (req, res) => {
     const id = await(await model.find({}, { _id: 0, ID: 1 }));
@@ -86,7 +118,6 @@ app.get('/DeleteView', async (req, res) => {
     })
 
 });
-
 app.post('/Id', async (req, res) => {
     const { Image } = req.body;
     const id = await (await model.find({}, { _id: 1, ID: 1 }));
@@ -97,6 +128,9 @@ app.post('/Id', async (req, res) => {
     }
     
 });
+app.post('/ModifyOper',(req,res)=>{
+    res.redirect('/');
+})
 function fetchColumn(id,column) {
     arr = [];
     for (var i = 0; i < id.length; i++) {

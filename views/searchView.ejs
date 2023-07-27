@@ -1,0 +1,58 @@
+<%-include('include/header')%>
+<!-- Mainbody -->
+    <div class="view-table">
+        <div class="row">
+            <div class="column">
+                <h2>ID</h2>
+                <hr />
+            </div>
+            <div class="column">
+                <h2>Name</h2>
+                <hr />
+            </div>
+            <div class="column">
+                <h2>Roll</h2>
+                <hr />
+            </div>
+            <div class="column">
+                <h2>Father</h2>
+                <hr />
+            </div>
+            <div class="column">
+                <h2>Address</h2>
+                <hr />
+            </div>
+            <div class="column">
+                <h2>Phone</h2>
+                <hr />
+            </div>
+            </div>
+            <%for(var i=0;i<data.length;i++) {%>
+            <div class="row">
+             <div class="column">
+                <h2><%=data[i]['ID']%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[i]['Name']%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[i]['Roll']%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[i]['Father']%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[i]['Address']%></h2>
+            </div>
+            <div class="column">
+                <h2><%=data[i]['Phone']%></h2>
+            </div>
+
+            </div>
+            <%}%>
+    </div>
+ <script>
+let table = document.querySelector('.view-table');
+ 
+</script>
+<%-include('include/footer')%>
